@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlgoHide</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <link rel="shortcut icon" href="icon.png" type="image/png">
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <img src="icon.png" class="icon"/>
+            <h1>AlgoHide</h1>
+            <span class="subtitle">Hide yourself from algorithms, created by <a href="https://twitter.com/sammwy">@Sammwy</a></span>
+        </div>
+
+        <div class="right">
+            <a class="link" href="https://github.com/sammwyy/algohide">Source Code</a>
+            <a class="link" href="https://paypal.me/sammwy">Donate</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="panel-list">
+            <div class="panel">
+                <h2>Write here your text</h2>
+                <textarea id="input" rows="15"></textarea>
+                <button class="btn" onclick="startConvert()">Hide your message</button>
+            </div>
+    
+            <div class="panel">
+                <h2>Here your output</h2>
+                <textarea id="result" rows="15" readonly></textarea>
+                <button class="btn">Copy</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
