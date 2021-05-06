@@ -54,6 +54,8 @@ const convertions = {
     "z": ["z", "𝘻"]
 }
 
+var encodeLevel = 3;
+
 function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -104,13 +106,13 @@ function replaceText (text) {
     for (let word of words) {
         let output = [];
         for (let char of word) {
-            let convert = (randomInteger(1, 3)) == 1;
-    
+            let convert = (randomInteger(1, 5)) <= encodeLevel;
+
             if (convert) {
                 let replacement = getRandomItem(convertions[char], char);
                 char = replacement;
             }
-    
+
             output.push(char);
         }
 
@@ -132,3 +134,32 @@ function startConvert () {
     let result = replaceText(input);
     setResult(result);
 }
+
+function updateEncodeDescription () {
+    let str = "";
+
+    if (encodeLevel == 1)
+        str = "Soft encoder"
+
+    else if (encodeLevel == 2)
+        str = "Basic encoder"
+
+    else if (encodeLevel == 3)
+        str = "Normal encoder"
+
+    else if (encodeLevel == 4)
+        str = "Hard encoder"
+
+    else
+        str = "Extreme encoder"
+
+    document.getElementById("encode-range-description").innerHTML = str + " (" + encodeLevel + ")";
+}
+
+window.addEventListener("load", () => {
+    const el = document.getElementById("encode-range");
+    el.addEventListener("change", (e) => {
+        encodeLevel = e.target.value;
+        updateEncodeDescription ();
+    })
+})

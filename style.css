@@ -88,6 +88,10 @@ a {
     font-weight: bold;
 }
 
+.range {
+    display: inline-block;
+}
+
 /* Mobile support */
 @media screen and (max-width: 986px) {
     .panel-list {
@@ -97,6 +101,14 @@ a {
     .panel {
         display: block;
         width: 100%;
+    }
+
+    .range {
+        display: block;
+        width: 100%;
+        padding: 5px;
+        margin-top: 10px;
+        text-align: center;
     }
 }
 
