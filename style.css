@@ -43,6 +43,11 @@ body {
     border: none;
     outline: none;
     cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.btn:disabled {
+    background-color: #aaa;
 }
 
 .container {

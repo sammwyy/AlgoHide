@@ -62,6 +62,18 @@ function getInput () {
     return document.getElementById("input").value;
 }
 
+function copyResultToClipboard () {
+    let el = document.getElementById("result");
+    el.select();el.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    document.getElementById("copy-btn").innerHTML = "Copied!";
+    document.getElementById("copy-btn").setAttribute("disabled", "disabled");
+    setTimeout(function () {
+        document.getElementById("copy-btn").removeAttribute("disabled");
+        document.getElementById("copy-btn").innerHTML = "Copy";
+    }, 2000);
+}
+
 function getRandomItem(arr) {
     // get random index value
     const randomIndex = Math.floor(Math.random() * arr.length);
