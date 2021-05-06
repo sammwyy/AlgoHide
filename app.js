@@ -54,6 +54,10 @@ const convertions = {
     "z": ["z", "𝘻"]
 }
 
+function randomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function getEmpty () {
     return " ‏";
 }
@@ -74,7 +78,11 @@ function copyResultToClipboard () {
     }, 2000);
 }
 
-function getRandomItem(arr) {
+function getRandomItem(arr, _default) {
+    if (arr == null) {
+        return _default;
+    }
+
     // get random index value
     const randomIndex = Math.floor(Math.random() * arr.length);
     // get random item
@@ -90,14 +98,26 @@ function addTrashToText (text) {
 }
 
 function replaceText (text) {
-    for (let key of Object.keys(convertions)) {
-        console.log(key)
-        let regex = new RegExp(key, "g");
-        let replacement = getRandomItem(convertions[key]);
-        text = text.replaceAll(regex, replacement)
+    let words = text.split(" ");
+    let result = [];
+
+    for (let word of words) {
+        let output = [];
+        for (let char of word) {
+            let convert = (randomInteger(1, 3)) == 1;
+    
+            if (convert) {
+                let replacement = getRandomItem(convertions[char], char);
+                char = replacement;
+            }
+    
+            output.push(char);
+        }
+
+        result.push(output.join(""))
     }
 
-    return text;
+    return result.join(" ");
 }
 
 function setResult (text) {
