@@ -1,4 +1,4 @@
-# AlgoHide
+# [AlgoHide](https://sammwyy.github.io/AlgoHide/)
 Hide yourself from social network algorithms.
 
 ## How does it work?
@@ -10,3 +10,4 @@ In other words, it warps the letters of your text so that a computer cannot hand
 You can make me a donation at [PayPal](https://paypal.me/sammwy)   
 BTC bc1qk00e86lnd8vx6msef25a00hq7slr5huwrpf976  
 ETH 0x886feA6b078691aBc07E204Fa0409386e9EB03a6
+
